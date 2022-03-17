@@ -9,6 +9,12 @@
 
     <!-- ICON -->
     <link rel="stylesheet" href="./assets/fonts/style.css" />
+
+    <!-- SWIPER -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
     <!-- STYLES -->
     <link rel="stylesheet" href="style.css" />
 
@@ -103,9 +109,11 @@
         </container>
       </section>
       <!-- /about -->
+
       <div class="divider-2"></div>
 
       <!-- services  -->
+
       <section class="section" id="services">
         <container class="container grid">
           <header>
@@ -147,20 +155,80 @@
           </div>
         </container>
       </section>
+      
       <!-- /services  -->
+
+      <div class="divider-1"></div>
 
       <!-- testimonials  -->
       <section class="section" id="testimonials">
-        <container class="container grid">
-          <div class="title">
-            <p>Depoimentos de 
-              quem já passou 
-              por aqui</p>
+        <container class="container">
+          <header>
+            <h2 class="title">Depoimentos de quem já passou por aqui</h2>
+          </header>
+          <div class="testimonials swiper-container">
+            <div class="swiper-wrapper">
+
+              <!-- testemunhos -->
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Necessitatibus ut voluptatum officia, ipsa reiciendis
+                    doloremque obcaecat?
+                  </p>
+                  <cite>
+                    <img
+                      src="https://randomuser.me/api/portraits/women/62.jpg"
+                      alt="foto de Wanessa Souza"
+                    />
+                    Wanessa Souza
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Necessitatibus ut ?
+                  </p>
+                  <cite>
+                    <img
+                      src="https://randomuser.me/api/portraits/men/54.jpg"
+                      alt="Foto de Mayk Brito"
+                    />
+                    Mayk Brito
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Necessitatibus?
+                  </p>
+                  <cite>
+                    <img
+                      src="https://randomuser.me/api/portraits/women/48.jpg"
+                      alt="Foto de Roberta Souza"
+                    />
+                    Roberta Souza
+                  </cite>
+                </blockquote>
+              </div>
+
+            </div><div class="swiper-pagination"></div>
+            
           </div>
         </container>
       </section>
       <!-- /testimonials  -->
-
+      <div class="divider-2"></div>
       <!-- contact -->
       <section class="section" id="contact">
         <container class="container grid">Contato</container>
@@ -169,5 +237,8 @@
     </main>
     <footer></footer>
   </body>
+  <!-- SWIPPER -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <!-- SWIPPER -->
   <script src="main.js"></script>
 </html>

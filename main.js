@@ -18,15 +18,25 @@ for (const link of links) {
   });
 }
 
-//mudar o headr da pagina quando der scroll//
+//mudar o header da pagina quando der scroll//
 
-const header= document.querySelector('#header')
-const navHeight= header.offsetHeight
+const header = document.querySelector("#header");
+const navHeight = header.offsetHeight;
 
-window.addEventListener('scroll', ()=>{
-  if(window.scrollY >= navHeight) {
-    header.classList.add('scroll')
-  } else{
-    header.classList.remove('scroll')
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= navHeight) {
+    header.classList.add("scroll");
+  } else {
+    header.classList.remove("scroll");
   }
-})
+});
+
+//testemonials slider
+const swiper = new Swiper(".swiper-container", {
+  slidesPerView: 1,
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  mousewheel: true,
+  keyboard: true
+});
