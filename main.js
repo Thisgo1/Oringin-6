@@ -20,17 +20,15 @@ for (const link of links) {
 
 //mudar o header da pagina quando der scroll//
 
+const header = document.querySelector("#header");
+const navHeight = header.offsetHeight;
 
-function changeHeaderWhenScroll(){
-  
-  const header = document.querySelector("#header");
-  const navHeight = header.offsetHeight;
-  
+function changeHeaderWhenScroll() {
   if (window.scrollY >= navHeight) {
     header.classList.add("scroll");
   } else {
     header.classList.remove("scroll");
-  };
+  }
 }
 
 //testemonials slider
@@ -42,11 +40,11 @@ const swiper = new Swiper(".swiper-container", {
   mousewheel: true,
   keyboard: true,
   breakpoints: {
-    767:{
+    767: {
       slidesPerView: 2,
       setWrapperSize: true,
-    }
-  }
+    },
+  },
 });
 
 // Scroll Reveal mostrar elementos ao scrollar a pagina////
@@ -64,23 +62,50 @@ scrollReveal.reveal(
   #services .header, #services .card,
   #testimonials .header, #testimonials, .testimonial
   #contact .text, #contact .links,
-  footer .brand, footer .social`, { interval: 100 });
+  footer .brand, footer .social`,
+  { interval: 100 }
+);
 
 // back-to-top visibiliade do button
 
 function backToTop() {
-  const backToTopButton = document.querySelector('.back-to-top');
+  const backToTopButton = document.querySelector(".back-to-top");
 
-  if(window.scrollY >= 560){
-    backToTopButton.classList.add('show')
-  }else{
-    backToTopButton.classList.remove('show')
-  } 
-};
+  if (window.scrollY >= 560) {
+    backToTopButton.classList.add("show");
+  } else {
+    backToTopButton.classList.remove("show");
+  }
+}
 
+//menu ativo quando estiver nele
+const sections = document.querySelectorAll("section[id]");
+function activateMenuAtCurrentSection() {
+  const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4;
+
+  for (let section of sections) {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute("id");
+  
+    const checkpointStart = checkpoint >= sectionTop
+    const checkpointEnd = checkpoint <= sectionTop + sectionHeight;
+    
+    if(checkpointStart && checkpointEnd){
+      document
+        .querySelector('nav ul li a[href*=' + sectionId + ']')
+        .classList.add('active')
+      } else {
+        document
+        .querySelector('nav ul li a[href*=' + sectionId + ']')
+        .classList.remove('active')
+    }
+  }
+
+}
 
 //funçoes de rolagem de pagina
 window.addEventListener("scroll", () => {
-  changeHeaderWhenScroll(),
-  backToTop()
-})
+  activateMenuAtCurrentSection(),
+  changeHeaderWhenScroll(), backToTop();
+});
